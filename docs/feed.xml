@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>AI Security &amp; Protocol Weekly Digest</title>
+    <link>https://cchilson13.github.io/ai-security-digest/</link>
+    <description>Weekly digest of AI security news and AI protocol changes (MCP, A2A) from Anthropic, OpenAI, DeepMind, and security researchers.</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Jul 2026 21:07:43 +0000</lastBuildDate>
+    <item>
+      <title>[Schneier on Security] The Realities of AI Video Surveillance</title>
+      <link>https://www.schneier.com/blog/archives/2026/06/the-realities-of-ai-video-surveillance.html</link>
+      <description>&lt;p&gt;The &lt;i&gt;Financial Times&lt;/i&gt; has a &lt;a href="https://archive.ph/s6mES"&gt;good article&lt;/a&gt; on how AI is changing the capabilities of video surveillance, with information from both Israel/Iran and Russia.&lt;/p&gt;
+&lt;p&gt;I &lt;a href="https://www.schneier.com/blog/archives/2023/12/ai-and-mass-spying.html"&gt;wrote about&lt;/a&gt; this sort of thing a few years ago, how AI enables mass spying in the way that computers and networks enabled mass surveillance. The interesting development in the article is that AI allows people to ask natural language questions about video footage to AIs&amp;#8212;and AIs can answer them.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;In contrast with older tools restricted to a few dozen preset searches, these new tools allow an almost unlimited range of enquiries by enabling language-based searches on video...&lt;/p&gt;&lt;/blockquote&gt;</description>
+      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/06/the-realities-of-ai-video-surveillance.html</guid>
+      <pubDate>Tue, 30 Jun 2026 12:05:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Simon Willison] What's new in Claude Sonnet 5</title>
+      <link>https://simonwillison.net/2026/Jun/30/claude-sonnet-5/#atom-everything</link>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5"&gt;What&amp;#x27;s new in Claude Sonnet 5&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Claude Sonnet 5 came out &lt;a href="https://www.anthropic.com/news/claude-sonnet-5"&gt;this morning&lt;/a&gt;. I always head straight for the "what's new" developer docs because they tend to have more actionable information than the official announcement post.&lt;/p&gt;
+&lt;p&gt;Anthropic say of Sonnet 5 that "its performance is close to that of Opus 4.8, but at lower prices". The &lt;a href="https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf"&gt;system card&lt;/a&gt; helps explain how they were able to release the model without being blocked by the US government:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sonnet 5 is significantly less capable at cyber tasks than Mythos 5: its safeguards are thus similar to those we apply to Opus 4.7 and Opus 4.8 (models that are more capable than Sonnet 5 but much less capable than Mythos 5).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Of note from the "what's new" API changes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sampling parameters &lt;code&gt;temperature&lt;/code&gt;, &lt;code&gt;top_p&lt;/code&gt;, &lt;code&gt;top_k&lt;/code&gt; are no longer supported.&lt;/li&gt;
+&lt;li&gt;It has a 1 million token context window and 128,000 maximum output tokens.&lt;/li&gt;
+&lt;li&gt;It features "the same set of tools and platform features as Claude Sonnet 4.6"&lt;/li&gt;
+&lt;li&gt;Adaptive thinking is on by default, unless you specify &lt;code&gt;"thinking": {type: "disabled"}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The pricing is the same as Sonnet 4.6: $3/million input, $15/million input, with an introductory discount to $2/$10 until 31st August. But...&lt;/li&gt;
+&lt;li&gt;The model has a new tokenizer, where "The same input text produces approximately 30% more tokens than on Claude Sonnet 4.6." - effectively a 30% price increase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I used my &lt;a href="https://tools.simonwillison.net/claude-token-counter"&gt;Claude Token Counter&lt;/a&gt; tool to try out the new tokenizer. Here are my results for several larger documents:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Document&lt;/th&gt;
+      &lt;th&gt;Sonnet 4.6&lt;/th&gt;
+      &lt;th&gt;Opus 4.7&lt;/th&gt;
+      &lt;th&gt;Sonnet 5&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="https://github.com/simonw/udhr-markdown/blob/main/declarations/eng.md"&gt;Universal Declaration of Human Rights (English)&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;2,356&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,347&lt;/b&gt;&lt;br /&gt;1.42x&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,341&lt;/b&gt;&lt;br /&gt;1.42x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="https://github.com/simonw/udhr-markdown/blob/main/declarations/spa.md"&gt;Universal Declaration of Human Rights (Spanish)&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,572&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;4,753&lt;/b&gt;&lt;br /&gt;1.33x&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;4,747&lt;/b&gt;&lt;br /&gt;1.33x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="https://github.com/simonw/udhr-markdown/blob/main/declarations/cmn_hans.md"&gt;Universal Declaration of Human Rights (Chinese, Mandarin Simplified)&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,334&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,366&lt;/b&gt;&lt;br /&gt;1.01x&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;3,360&lt;/b&gt;&lt;br /&gt;1.01x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href="https://github.com/simonw/sqlite-utils/blob/79117b9d110d72f46dab5fe2cda412ff4789ab55/sqlite_utils/db.py"&gt;sqlite_utils/db.py&lt;/a&gt; (4,279 lines of Python)&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;44,014&lt;/b&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;56,118&lt;/b&gt;&lt;br /&gt;1.28x&lt;/td&gt;
+      &lt;td&gt;&lt;b&gt;56,113&lt;/b&gt;&lt;br /&gt;1.27x&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So the new token is roughly 1.4x times more expensive for English, 1.33x for Spanish, 1.28x for Python code and effectively the same cost for Simplified Mandarin.&lt;/p&gt;
+&lt;p&gt;Here's &lt;a href="https://gist.github.com/simonw/a89e756b621a31e8ffc210e3428efa77"&gt;the pelican&lt;/a&gt;. It's nothing to write home about. Sonnet 5 thinks it looks like a goose.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Illustration of a white goose riding a bicycle, with one wing extended forward to grip the handlebar, set against a plain white background with a brown ground line." src="https://static.simonwillison.net/static/2026/sonnet-5-pelican.png" /&gt;
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://news.ycombinator.com/item?id=48736605"&gt;Hacker News&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude"&gt;claude&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-pricing"&gt;llm-pricing&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/pelican-riding-a-bicycle"&gt;pelican-riding-a-bicycle&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-release"&gt;llm-release&lt;/a&gt;&lt;/p&gt;</description>
+      <guid isPermaLink="true">https://simonwillison.net/2026/Jun/30/claude-sonnet-5/#atom-everything</guid>
+      <pubDate>Tue, 30 Jun 2026 21:23:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Ars Technica AI] After spooking Trump into safety testing, Anthropic AI models get global release</title>
+      <link>https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/</link>
+      <description>US lifts curbs on Anthropic’s advanced Fable and Mythos models.</description>
+      <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/</guid>
+      <pubDate>Wed, 01 Jul 2026 16:44:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Anthropic] More details on Fable 5’s cyber safeguards and our jailbreak framework</title>
+      <link>https://www.anthropic.com/news/fable-safeguards-jailbreak-framework</link>
+      <description>Announcements</description>
+      <guid isPermaLink="true">https://www.anthropic.com/news/fable-safeguards-jailbreak-framework</guid>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Schneier on Security] Cybersecurity Mission Creep in the US</title>
+      <link>https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html</link>
+      <description>&lt;p&gt;Interesting paper: &amp;#8220;&lt;a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4588977"&gt;Cybersecurity Mission Creep&lt;/a&gt;.&amp;#8221;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Abstract:&lt;/b&gt; Cybersecurity is experiencing mission creep. Policymakers are casting more and more problems as issues of cybersecurity. So reframed, wildly different policy issues, from misinformation, to child social media safety laws, to antitrust regulations, to alleged journalist misconduct, to anti-sex trafficking statutes become what this Article calls &amp;#8220;cybersecuritized.&amp;#8221; Before this reframing, these issues present as important but not existential. But once cybersecuritization positions the issues as threats intensified by their technological nature, they gain access to the politics and law of urgency and exceptionalism and invite troubling governance responses...&lt;/p&gt;&lt;/blockquote&gt;</description>
+      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html</guid>
+      <pubDate>Thu, 02 Jul 2026 11:11:44 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
