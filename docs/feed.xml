@@ -7,7 +7,14 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 21:07:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 21:41:25 +0000</lastBuildDate>
+    <item>
+      <title>[AWS Machine Learning Blog] Multi-tenant LLM analytics with row-level security: How we built a secure agent on AWS</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/multi-tenant-llm-analytics-with-row-level-security-how-we-built-a-secure-agent-on-aws/</link>
+      <description>In this post, we show you how PAR built a production-ready multi-tenant LLM analytics system that enforces row-level security through a three-layer architecture: cryptographic request signing with AWS SigV4, semantic validation on Amazon Bedrock, and programmatic data isolation via Split-Plane SQL. We demonstrate how each layer operates independently to reduce the risk of cross-tenant data exposure, even when the LLM itself is compromised or manipulated.</description>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/machine-learning/multi-tenant-llm-analytics-with-row-level-security-how-we-built-a-secure-agent-on-aws/</guid>
+      <pubDate>Mon, 29 Jun 2026 17:39:29 +0000</pubDate>
+    </item>
     <item>
       <title>[Schneier on Security] The Realities of AI Video Surveillance</title>
       <link>https://www.schneier.com/blog/archives/2026/06/the-realities-of-ai-video-surveillance.html</link>
@@ -16,6 +23,13 @@
 &lt;blockquote&gt;&lt;p&gt;In contrast with older tools restricted to a few dozen preset searches, these new tools allow an almost unlimited range of enquiries by enabling language-based searches on video...&lt;/p&gt;&lt;/blockquote&gt;</description>
       <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/06/the-realities-of-ai-video-surveillance.html</guid>
       <pubDate>Tue, 30 Jun 2026 12:05:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Ars Technica Security] New attack provides one more reason why AI browsers are a bad idea</title>
+      <link>https://arstechnica.com/security/2026/06/ai-browsers-can-be-lulled-into-a-dream-world-where-guardrails-no-longer-apply/</link>
+      <description>Telling an LLM that 2 + 2 = 5 is enough to make it follow forbidden instructions.</description>
+      <guid isPermaLink="true">https://arstechnica.com/security/2026/06/ai-browsers-can-be-lulled-into-a-dream-world-where-guardrails-no-longer-apply/</guid>
+      <pubDate>Tue, 30 Jun 2026 20:03:14 +0000</pubDate>
     </item>
     <item>
       <title>[Simon Willison] What's new in Claude Sonnet 5</title>
@@ -85,11 +99,73 @@ Claude Sonnet 5 came out &lt;a href="https://www.anthropic.com/news/claude-sonne
       <pubDate>Tue, 30 Jun 2026 21:23:02 +0000</pubDate>
     </item>
     <item>
+      <title>[Unit 42] Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector</title>
+      <link>https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/</link>
+      <description>&lt;p&gt;Attackers can exploit LLM domain hallucinations through phantom squatting to target supply chains. Read the analysis to learn more. &lt;/p&gt;
+&lt;p&gt;The post &lt;a href="https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/"&gt;Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector&lt;/a&gt; appeared first on &lt;a href="https://unit42.paloaltonetworks.com"&gt;Unit 42&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid isPermaLink="true">https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/</guid>
+      <pubDate>Wed, 01 Jul 2026 01:00:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>[AWS Machine Learning Blog] Safely Releasing Frontier Models to Customers</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers/</link>
+      <description>It’s our goal for AWS to be the most secure place to run any workload, and in support of that we’ve been deeply investing in security across our services since&amp;nbsp;AWS's&amp;nbsp;inception more than two decades ago. Our AI services like Amazon Bedrock are built on this foundation and with the same focus.</description>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers/</guid>
+      <pubDate>Wed, 01 Jul 2026 03:13:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls</title>
+      <link>https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html</link>
+      <description>Anthropic is putting Claude Fable 5 back online worldwide. On&amp;nbsp;June 30, the U.S. Commerce Department lifted the export controls it had imposed on Fable and its more tightly controlled sibling Mythos 5 about two and a half weeks earlier.
+
+Fable 5 returns to users on Wednesday, July 1, across Claude.ai, the Claude Platform, Claude Code, and Claude Cowork.
+
+Export controls restrict who can</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html</guid>
+      <pubDate>Wed, 01 Jul 2026 06:46:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware</title>
+      <link>https://thehackernews.com/2026/07/phantom-squatting-uses-ai-hallucinated.html</link>
+      <description>Large language models keep inventing web addresses that do not exist. Attackers have started buying those made-up domains before anyone else can, then hosting phishing pages on them to catch traffic that AI tools point their way.
+
+Palo Alto Networks'&amp;nbsp;Unit 42&amp;nbsp;calls the trick phantom squatting, and its new research shows it is already happening in the wild.
+
+The reason it matters is</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/phantom-squatting-uses-ai-hallucinated.html</guid>
+      <pubDate>Wed, 01 Jul 2026 07:20:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] AI-Generated Browser Ransomware Abuses Chromium API on Windows, Linux, macOS, Android</title>
+      <link>https://thehackernews.com/2026/07/ai-generated-browser-ransomware-abuses.html</link>
+      <description>Cybersecurity researchers have flagged a new malware artifact generated using DeepSeek that constructed a novel attack path combining "unrealistic browser-malware concepts with a real browser capability" to turn it into a working ransomware technique that runs entirely inside the browser on both Windows and Android devices.
+
+"This is the first documented case where a frontier AI model</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/ai-generated-browser-ransomware-abuses.html</guid>
+      <pubDate>Wed, 01 Jul 2026 12:59:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands</title>
+      <link>https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html</link>
+      <description>Two flaws in Cursor, an AI code editor, could let a single, ordinary-looking prompt break out of the editor's safety sandbox and run any command on a developer's computer. There is no click to fall for and no approval box to ignore.
+
+Cato AI Labs&amp;nbsp;found the pair and named them DuneSlide. They are tracked as&amp;nbsp;CVE-2026-50548&amp;nbsp;and&amp;nbsp;CVE-2026-50549, both rated 9.8 out of 10 (or 9.3</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html</guid>
+      <pubDate>Wed, 01 Jul 2026 14:42:54 +0000</pubDate>
+    </item>
+    <item>
       <title>[Ars Technica AI] After spooking Trump into safety testing, Anthropic AI models get global release</title>
       <link>https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/</link>
       <description>US lifts curbs on Anthropic’s advanced Fable and Mythos models.</description>
       <guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/07/after-spooking-trump-into-safety-testing-anthropic-ai-models-get-global-release/</guid>
       <pubDate>Wed, 01 Jul 2026 16:44:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[AWS Security Blog] Secure Amazon container workloads using container attribute-based rules in AWS Network Firewall</title>
+      <link>https://aws.amazon.com/blogs/security/secure-amazon-container-workloads-using-container-attribute-based-rules-in-aws-network-firewall/</link>
+      <description>Today, you can use AWS Network Firewall to protect traffic flowing to and from containerized applications on Amazon Elastic Kubernetes Service (Amazon EKS) and Amazon Elastic Container Service (Amazon ECS) clusters. If you run AI and machine learning (ML) workloads on Amazon EKS—such as model inference, RAG pipelines, or JupyterHub—your containerized workloads require the same […]</description>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/security/secure-amazon-container-workloads-using-container-attribute-based-rules-in-aws-network-firewall/</guid>
+      <pubDate>Wed, 01 Jul 2026 19:40:22 +0000</pubDate>
     </item>
     <item>
       <title>[Anthropic] More details on Fable 5’s cyber safeguards and our jailbreak framework</title>
@@ -99,12 +175,51 @@ Claude Sonnet 5 came out &lt;a href="https://www.anthropic.com/news/claude-sonne
       <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Schneier on Security] Cybersecurity Mission Creep in the US</title>
-      <link>https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html</link>
-      <description>&lt;p&gt;Interesting paper: &amp;#8220;&lt;a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4588977"&gt;Cybersecurity Mission Creep&lt;/a&gt;.&amp;#8221;&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Abstract:&lt;/b&gt; Cybersecurity is experiencing mission creep. Policymakers are casting more and more problems as issues of cybersecurity. So reframed, wildly different policy issues, from misinformation, to child social media safety laws, to antitrust regulations, to alleged journalist misconduct, to anti-sex trafficking statutes become what this Article calls &amp;#8220;cybersecuritized.&amp;#8221; Before this reframing, these issues present as important but not existential. But once cybersecuritization positions the issues as threats intensified by their technological nature, they gain access to the politics and law of urgency and exceptionalism and invite troubling governance responses...&lt;/p&gt;&lt;/blockquote&gt;</description>
-      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html</guid>
-      <pubDate>Thu, 02 Jul 2026 11:11:44 +0000</pubDate>
+      <title>[The Hacker News] AI Agent Exploits Langflow RCE to Automate Database Ransomware Attack</title>
+      <link>https://thehackernews.com/2026/07/ai-agent-exploits-langflow-rce-to.html</link>
+      <description>Security firm&amp;nbsp;Sysdig&amp;nbsp;says it has found what it believes is the first ransomware attack run from start to finish by an AI agent.
+
+Its Threat Research Team calls the operator JADEPUFFER and says a large language model handled the whole job: breaking in, stealing credentials, moving deeper into the network, then encrypting and wiping a company's production database.
+
+Ransomware has always</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/ai-agent-exploits-langflow-rce-to.html</guid>
+      <pubDate>Thu, 02 Jul 2026 09:13:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] Identity Lifecycle Management Wasn't Built for AI Agents</title>
+      <link>https://thehackernews.com/2026/07/identity-lifecycle-management.html</link>
+      <description>Identity lifecycle management was architected around a person with an employment record, a manager, and a departure date. AI agents have none of those. As autonomous principals proliferate across enterprise environments, the governance model built for humans develops structural blind spots that traditional IGA tools weren't designed to detect. This guide covers where that model breaks, what it</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/identity-lifecycle-management.html</guid>
+      <pubDate>Thu, 02 Jul 2026 11:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] ThreatsDay: AI Compute Hijacking, Apple Email Flaw, BlueHammer Ransomware + 14 Stories</title>
+      <link>https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html</link>
+      <description>This week’s security news is mostly about weak spots.
+
+Browsers, bots, sandboxes, AI systems, and email flows all show the same problem in different ways. Everything looks normal until someone tests a small gap and finds a way through.
+
+This is not one big break. It is small permissions, weak checks, open systems, and normal tools doing things they were allowed to do. That same pattern runs</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/threatsday-ai-compute-hijacking-apple.html</guid>
+      <pubDate>Thu, 02 Jul 2026 15:24:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[AWS Machine Learning Blog] How Amazon Bedrock catches AI-generated phishing</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-amazon-bedrock-catches-ai-generated-phishing/</link>
+      <description>Social engineering through phishing remains one of the most common tactics for launching cyberattacks. AI-generated phishing email messages now pose a new challenge for security teams managing email systems, significantly raising the risk because of their advanced sophistication. Modern social engineers use generative AI and open source intelligence (OSINT) to craft thousands of unique messages […]</description>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/machine-learning/how-amazon-bedrock-catches-ai-generated-phishing/</guid>
+      <pubDate>Thu, 02 Jul 2026 17:55:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[The Hacker News] New "Bad Epoll" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android</title>
+      <link>https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html</link>
+      <description>A newly disclosed Linux kernel flaw called Bad Epoll (CVE-2026-46242) lets an ordinary user with no special access take full control of a machine as root. It affects Linux desktops, servers, and Android, and a fix is out.
+
+Bad Epoll sits in the same small stretch of kernel code where Anthropic's most powerful AI model, Mythos, recently found a different bug.
+
+The AI caught one flaw and missed</description>
+      <guid isPermaLink="true">https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html</guid>
+      <pubDate>Fri, 03 Jul 2026 19:40:01 +0000</pubDate>
     </item>
   </channel>
 </rss>

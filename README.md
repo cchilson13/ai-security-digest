@@ -16,13 +16,25 @@ pulled from a curated set of sources and rebuilt automatically every Monday.
 - Schneier on Security
 - Simon Willison's blog
 - Ars Technica – AI
+- AWS Security Blog
+- AWS Machine Learning Blog
+- Google Security Blog
+- Krebs on Security
+- The Hacker News
+- Unit 42 (Palo Alto Networks)
+- Ars Technica – Security
+- Embrace The Red
 
-Anthropic, OpenAI, DeepMind, and Ars Technica's AI section are filtered to
-security/safety/protocol-relevant posts (`build_feed.py`'s `NARROW_*`
-keywords) since most of what they publish isn't security news. Schneier's
-blog is filtered more loosely since it's a general security blog where any
-AI mention is notable. The MCP and A2A changelogs are never filtered —
-every release is in scope.
+AI-dedicated sources (Anthropic, OpenAI, DeepMind, AWS Machine Learning
+Blog, Simon Willison, Ars Technica's AI section) are filtered down to
+security/protocol-relevant posts, since most of what they publish isn't
+security news. Security-dedicated sources (Schneier, AWS Security Blog,
+Google Security Blog, Krebs, The Hacker News, Unit 42, Ars Technica's
+Security section) are filtered down to AI-relevant posts, since most of
+what they publish isn't AI news. The MCP/A2A changelogs and Embrace The
+Red (a blog specifically about AI agent security) are never filtered —
+everything they publish is already in scope. See `AGENTS.md` for details
+on the filter design.
 
 ## How it runs
 

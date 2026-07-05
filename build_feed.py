@@ -27,35 +27,43 @@ LOOKBACK_DAYS = 9
 MAX_ITEMS_PER_SOURCE = 8
 USER_AGENT = "Mozilla/5.0 (compatible; ai-security-digest/1.0)"
 
-# Security/protocol-specific signal. Matched as substrings (all multi-word
-# or long enough to avoid false hits).
-NARROW_PHRASE_KEYWORDS = [
-    "model context protocol", "agent2agent", "agent-to-agent",
+# Every source we filter is already guaranteed to be about ONE of the two
+# halves of "AI security" -- an AI-dedicated source (OpenAI's blog, an "AI"
+# news vertical) is guaranteed to be about AI, and a security-dedicated
+# source (Krebs, Unit 42, a "Security" blog) is guaranteed to be about
+# security. So instead of requiring generic "security" words (which are
+# trivially present in a security blog's own name/boilerplate -- e.g.
+# "krebsonsecurity" -- and would match almost every post there), we only
+# require the signal for the OTHER half: AI-dedicated sources need a
+# SECURITY keyword to narrow down to security-relevant posts, and
+# security-dedicated sources need an AI keyword to narrow down to
+# AI-relevant posts.
+
+# Indicates the SECURITY half. Checked for sources where AI is already
+# guaranteed (broad=False).
+SECURITY_PHRASE_KEYWORDS = [
     "prompt injection", "jailbreak", "red team", "red-team", "redteam",
     "adversarial", "guardrail", "safeguard", "data poisoning",
     "model extraction", "supply chain", "exploit", "vulnerability",
     "breach", "deepfake", "alignment", "misuse", "incident",
     "safety", "security",
 ]
+SECURITY_WORD_KEYWORDS = ["cve"]
 
-# Security/protocol-specific signal that's ambiguous as a raw substring
-# (e.g. "mcp" inside another word), so matched as whole words only.
-NARROW_WORD_KEYWORDS = ["mcp", "a2a", "cve"]
-
-# Generic AI-topic signal. Only useful for sources that AREN'T already
-# 100% about AI (e.g. a general security blog) -- for AI-dedicated
-# sources (OpenAI's own blog, an "AI" news section, etc.) nearly every
-# post would match these, so they add no filtering signal there.
-GENERIC_AI_WORD_KEYWORDS = ["ai", "llm", "claude", "gemini", "gpt", "chatgpt"]
-GENERIC_AI_PHRASE_KEYWORDS = [
-    "openai", "anthropic", "artificial intelligence", "machine learning",
+# Indicates the AI half. Checked for sources where security is already
+# guaranteed (broad=True).
+AI_PHRASE_KEYWORDS = [
+    "model context protocol", "agent2agent", "agent-to-agent",
+    "artificial intelligence", "machine learning", "openai", "anthropic",
+    "ai agent", "agentic",
 ]
+AI_WORD_KEYWORDS = ["ai", "llm", "mcp", "a2a", "claude", "gemini", "gpt", "chatgpt"]
 
-NARROW_WORD_RE = re.compile(
-    r"\b(?:" + "|".join(re.escape(w) for w in NARROW_WORD_KEYWORDS) + r")\b"
+SECURITY_WORD_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(w) for w in SECURITY_WORD_KEYWORDS) + r")\b"
 )
-GENERIC_AI_WORD_RE = re.compile(
-    r"\b(?:" + "|".join(re.escape(w) for w in GENERIC_AI_WORD_KEYWORDS) + r")\b"
+AI_WORD_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(w) for w in AI_WORD_KEYWORDS) + r")\b"
 )
 
 # type "feed": parsed with feedparser (RSS or Atom)
@@ -65,8 +73,12 @@ GENERIC_AI_WORD_RE = re.compile(
 # filter=True, broad=False: source is already AI-dedicated (an AI company's
 #   blog, an "AI" news vertical) -- require the narrow security/protocol
 #   keywords, since a bare "AI" mention matches nearly every post there
-# filter=True, broad=True: source covers many unrelated topics -- a bare
-#   AI mention is itself notable, so also match on generic AI keywords
+# filter=True, broad=False: source is already AI-dedicated (an AI
+#   company's blog, an "AI" news vertical) -- require a SECURITY keyword
+#   to narrow down to security/protocol-relevant posts
+# filter=True, broad=True: source is already security-dedicated (a
+#   "Security" blog, an infosec news outlet) -- require an AI keyword to
+#   narrow down to AI-relevant posts
 SOURCES = [
     {"name": "Anthropic", "type": "anthropic",
      "url": "https://www.anthropic.com/news", "filter": True, "broad": False},
@@ -85,21 +97,37 @@ SOURCES = [
      "url": "https://simonwillison.net/atom/everything/", "filter": True, "broad": False},
     {"name": "Ars Technica AI", "type": "feed",
      "url": "https://arstechnica.com/ai/feed/", "filter": True, "broad": False},
+    {"name": "AWS Security Blog", "type": "feed",
+     "url": "https://aws.amazon.com/blogs/security/feed/", "filter": True, "broad": True},
+    {"name": "AWS Machine Learning Blog", "type": "feed",
+     "url": "https://aws.amazon.com/blogs/machine-learning/feed/", "filter": True, "broad": False},
+    {"name": "Google Security Blog", "type": "feed",
+     "url": "https://security.googleblog.com/feeds/posts/default", "filter": True, "broad": True},
+    {"name": "Krebs on Security", "type": "feed",
+     "url": "https://krebsonsecurity.com/feed/", "filter": True, "broad": True},
+    {"name": "The Hacker News", "type": "feed",
+     "url": "https://feeds.feedburner.com/TheHackersNews", "filter": True, "broad": True},
+    {"name": "Unit 42", "type": "feed",
+     "url": "https://unit42.paloaltonetworks.com/feed/", "filter": True, "broad": True},
+    {"name": "Ars Technica Security", "type": "feed",
+     "url": "https://arstechnica.com/security/feed/", "filter": True, "broad": True},
+    {"name": "Embrace The Red", "type": "feed",
+     "url": "https://embracethered.com/blog/index.xml", "filter": False, "broad": False},
 ]
 
 
 def matches_keywords(text, broad):
     text = text.lower()
-    if any(kw in text for kw in NARROW_PHRASE_KEYWORDS):
-        return True
-    if NARROW_WORD_RE.search(text):
-        return True
     if broad:
-        if any(kw in text for kw in GENERIC_AI_PHRASE_KEYWORDS):
+        # Source is already security-dedicated; require an AI signal.
+        if any(kw in text for kw in AI_PHRASE_KEYWORDS):
             return True
-        if GENERIC_AI_WORD_RE.search(text):
+        return bool(AI_WORD_RE.search(text))
+    else:
+        # Source is already AI-dedicated; require a security signal.
+        if any(kw in text for kw in SECURITY_PHRASE_KEYWORDS):
             return True
-    return False
+        return bool(SECURITY_WORD_RE.search(text))
 
 
 def fetch_feed_entries(source):
