@@ -133,3 +133,28 @@ gh run view --log -R cchilson13/ai-security-digest <run-id>
 - **`LOOKBACK_DAYS = 9`** (not 7) is intentional slack in case a Monday run
   is delayed or misses — don't shrink it below ~8 or a delayed run could
   skip items.
+- **A 200 status on a guessed feed URL doesn't mean it's the right feed —
+  verify the actual entries.** While adding sources, several guessed URLs
+  returned HTTP 200 but weren't usable:
+  - `okta.com/blog.rss` returns a "No RSS Feed Available" placeholder
+    (still 200). `okta.com/rss.xml` returns 200 with real RSS *items*, but
+    they're stale podcast/event entries from 2023, not the blog. Okta was
+    dropped entirely — no working blog feed was found.
+  - `outshift.cisco.com/blog/rss.xml` (and other guessed paths) return 200
+    but are the Next.js app's client-rendered HTML shell (a "not found"
+    page), not a feed. No `<link rel="alternate" type="application/rss...">`
+    is declared on the blog page either — Outshift has no discoverable
+    feed, so it was dropped despite being a good source for AGNTCY
+    agent-identity news.
+  - `aembit.io/blog/feed` (no trailing slash after `/blog`) returns the WordPress
+    *comments* feed (title starts with "Comments on:"), which is always
+    empty. The real posts feed is `aembit.io/feed/`.
+  Always parse the candidate with `feedparser` and print entry titles
+  (not just check the HTTP status) before trusting a guessed feed URL.
+- **IETF has no clean per-working-group RSS feed.** Several OAuth-for-agents
+  drafts are worth watching (`draft-oauth-ai-agents-on-behalf-of-user`,
+  `draft-rosenberg-oauth-aauth`, `draft-klrc-aiagent-auth`), but the
+  datatracker doesn't expose an easy feed of new/updated drafts scoped to
+  the OAuth WG. Auth0/WorkOS/Aembit/Christian Posta's blog tend to cover
+  these drafts editorially when they matter, which is the current proxy.
+  If IETF ever adds a real feed for this, it'd be a better direct source.

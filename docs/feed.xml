@@ -7,7 +7,14 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 21:41:25 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 21:59:31 +0000</lastBuildDate>
+    <item>
+      <title>[Auth0 Blog] Add Auth0 Documentation to Claude Code</title>
+      <link>https://auth0.com/blog/add-auth0-documentation-claude-code/</link>
+      <description>Eliminate context-switching during authentication development. Learn how to connect the Auth0 MCP Server to Claude Code for real-time access to the complete Auth0 documentation directly inside your terminal terminal workspace.</description>
+      <guid isPermaLink="true">https://auth0.com/blog/add-auth0-documentation-claude-code/</guid>
+      <pubDate>Mon, 29 Jun 2026 15:29:00 +0000</pubDate>
+    </item>
     <item>
       <title>[AWS Machine Learning Blog] Multi-tenant LLM analytics with row-level security: How we built a secure agent on AWS</title>
       <link>https://aws.amazon.com/blogs/machine-learning/multi-tenant-llm-analytics-with-row-level-security-how-we-built-a-secure-agent-on-aws/</link>
@@ -99,6 +106,13 @@ Claude Sonnet 5 came out &lt;a href="https://www.anthropic.com/news/claude-sonne
       <pubDate>Tue, 30 Jun 2026 21:23:02 +0000</pubDate>
     </item>
     <item>
+      <title>[WorkOS Blog] WorkOS MCP: Manage your WorkOS account from any AI agent</title>
+      <link>https://workos.com/blog/management-mcp-server</link>
+      <description>We are launching a remote MCP server that gives AI agents the same access to WorkOS as your dashboard login.</description>
+      <guid isPermaLink="true">https://workos.com/blog/management-mcp-server</guid>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Unit 42] Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector</title>
       <link>https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/</link>
       <description>&lt;p&gt;Attackers can exploit LLM domain hallucinations through phantom squatting to target supply chains. Read the analysis to learn more. &lt;/p&gt;
@@ -166,6 +180,14 @@ Cato AI Labs&amp;nbsp;found the pair and named them DuneSlide. They are tracked 
       <description>Today, you can use AWS Network Firewall to protect traffic flowing to and from containerized applications on Amazon Elastic Kubernetes Service (Amazon EKS) and Amazon Elastic Container Service (Amazon ECS) clusters. If you run AI and machine learning (ML) workloads on Amazon EKS—such as model inference, RAG pipelines, or JupyterHub—your containerized workloads require the same […]</description>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/security/secure-amazon-container-workloads-using-container-attribute-based-rules-in-aws-network-firewall/</guid>
       <pubDate>Wed, 01 Jul 2026 19:40:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Aembit Blog] Secure Agentic Access: Authentication and Authorization for AI Agent Workloads</title>
+      <link>https://aembit.io/blog/secure-agentic-access-authentication-and-authorization-for-ai-agent-workloads/</link>
+      <description>&lt;p&gt;&lt;span class="span-reading-time rt-reading-time" style="display: block;"&gt;&lt;span class="rt-label rt-prefix"&gt;&lt;/span&gt; &lt;span class="rt-time"&gt; 8&lt;/span&gt; &lt;span class="rt-label rt-postfix"&gt;min read&lt;/span&gt;&lt;/span&gt;Many organizations deploying AI agents have not fully answered how those agents authenticate to services, what credentials they carry, or what happens to those credentials when the task ends. In some organizations, the agents work, so the question gets deferred. The problem is that &amp;#8220;it works&amp;#8221; is doing a lot of heavy lifting. The agent [&amp;#8230;]&lt;/p&gt;
+&lt;p&gt;The post &lt;a href="https://aembit.io/blog/secure-agentic-access-authentication-and-authorization-for-ai-agent-workloads/"&gt;Secure Agentic Access: Authentication and Authorization for AI Agent Workloads&lt;/a&gt; appeared first on &lt;a href="https://aembit.io"&gt;Aembit&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid isPermaLink="true">https://aembit.io/blog/secure-agentic-access-authentication-and-authorization-for-ai-agent-workloads/</guid>
+      <pubDate>Wed, 01 Jul 2026 21:05:47 +0000</pubDate>
     </item>
     <item>
       <title>[Anthropic] More details on Fable 5’s cyber safeguards and our jailbreak framework</title>

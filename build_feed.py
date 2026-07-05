@@ -113,6 +113,14 @@ SOURCES = [
      "url": "https://arstechnica.com/security/feed/", "filter": True, "broad": True},
     {"name": "Embrace The Red", "type": "feed",
      "url": "https://embracethered.com/blog/index.xml", "filter": False, "broad": False},
+    {"name": "Auth0 Blog", "type": "feed",
+     "url": "https://auth0.com/blog/rss.xml", "filter": True, "broad": True},
+    {"name": "WorkOS Blog", "type": "feed",
+     "url": "https://workos.com/blog/rss.xml", "filter": True, "broad": True},
+    {"name": "Aembit Blog", "type": "feed",
+     "url": "https://aembit.io/feed/", "filter": True, "broad": True},
+    {"name": "Christian Posta", "type": "feed",
+     "url": "https://blog.christianposta.com/feed.xml", "filter": False, "broad": False},
 ]
 
 
